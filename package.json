@@ -6,13 +6,13 @@
   "icon": "icon.png",
   "version": "0.2.2-fork-0.2",
   "license": "MIT",
-  "homepage": "https://github.com/imliam/vscode-inline-parameters",
+  "homepage": "https://github.com/birnfly/vscode-inline-parameters",
   "bugs": {
-    "url": "https://github.com/imliam/vscode-inline-parameters/issues"
+    "url": "https://github.com/birnfly/vscode-inline-parameters/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/imliam/vscode-inline-parameters"
+    "url": "https://github.com/birnfly/vscode-inline-parameters"
   },
   "main": "./out/extension.js",
   "engines": {
@@ -162,10 +162,11 @@
     ]
   },
   "scripts": {
-    "preinstall": "mkdir -p ./node_modules && touch ./node_modules/.metadata_never_index",
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --allow-missing-repository --allow-star-activation",
+		"install": "code --install-extension inline-parameters-0.2.2-fork-0.2.vsix --force"
   },
   "devDependencies": {
     "@types/glob": "^7.1.2",

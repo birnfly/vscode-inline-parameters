@@ -64,7 +64,7 @@ async function updateDecorations(activeEditor, languageDrivers: Record<string, L
         }
 
         for (let index = 0; index < languageParameters.length; index++) {
-            let parameterName = parameters[index]
+            let parameterName = parameters[index] as string
             let parameter = languageParameters[index]
 
             if (parameterName === undefined) continue; 
@@ -90,6 +90,8 @@ async function updateDecorations(activeEditor, languageDrivers: Record<string, L
             if (parameterCase === 'lowercase') {
                 parameterName = parameterName.toLowerCase()
             }
+
+            parameterName=parameterName.split(":")[0];
 
             const annotation = Annotations.parameterAnnotation(
                 leadingCharacters + parameterName + trailingCharacters,
